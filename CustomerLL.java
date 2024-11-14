@@ -134,7 +134,17 @@ public class CustomerLL {
         return undo;
     }
 
-    // delete PersonEnd
+    public Customer deleteCustomerById(int id) {
+        Customer temp = head;
+        while (temp.getCustomerLink() != null) {
+            if (temp.getCustomerID() == id)
+                return temp;
+            temp = temp.getCustomerLink();
+        }
+        System.out.println("Not Found");
+        return null;
+    }
+
     public int deleteCustomerEnd() {
         Customer position;
         position = head;

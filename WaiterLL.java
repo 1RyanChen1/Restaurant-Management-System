@@ -99,7 +99,17 @@ public class WaiterLL {
         return undo;
     }
 
-    // show list
+    public Waiter deleteWaiterById(int id) {
+        Waiter temp = head;
+        while (temp.getWaiterLink() != null) {
+            if (temp.getWaiterID() == id)
+                return temp;
+            temp = temp.getWaiterLink();
+        }
+        System.out.println("Not Found");
+        return null;
+    }
+
     public void showList() {
         Waiter position;
         position = head;
